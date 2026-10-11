@@ -28,7 +28,7 @@ The first isolated installation exposed and fixed a PowerShell package-lock pars
 
 Configuration was actually appended to a temporary Codex home containing an unrelated MCP entry. Python `tomllib` validated the result, and the installed Skill was present. The active user's Codex configuration was not changed. The installed CLI identified fixtures from two different working directories.
 
-All 22 unit/lifecycle tests passed. They exercise Plan without mutation, refusal of existing bare or quoted MCP keys, changed-owned-file retention, ownership-path escape refusal, and removal that preserves an unrelated file and later configuration comments. The complete first installation was actually uninstalled: owned launchers disappeared, an added user file and the unrelated MCP entry remained, and the project Skill was removed. Skill validation followed the actual CLI decisions on harmless binaries; see [Skill validation](skill-validation.md).
+All 22 unit/lifecycle tests passed. They exercise Plan without mutation, refusal of existing bare or quoted MCP keys, changed-owned-file retention, ownership-path escape refusal, and removal that preserves an unrelated file and later configuration comments. Both complete installations were actually uninstalled: owned launchers disappeared, unrelated files and MCP entries remained, and the project Skills were removed. The final installation's Plan checked 13,518 owned files; five new runtime/backup files totaling about 274 KiB were intentionally retained. Skill validation followed the actual CLI decisions on harmless binaries; see [Skill validation](skill-validation.md).
 
 ## Coverage boundaries
 

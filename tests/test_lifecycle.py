@@ -18,6 +18,7 @@ class Lifecycle(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name) / 'installation'
         self.root.mkdir()
+        self.root = self.root.resolve()
         owned = self.root / 'owned.txt'
         owned.write_text('owned', encoding='utf-8')
         self.record = {'product': 'Urimchain', 'root': str(self.root), 'files': [
@@ -53,7 +54,7 @@ class Lifecycle(unittest.TestCase):
                                 text=True, encoding='utf-8', errors='replace')
         self.assertEqual(result.returncode, 0, result.stderr)
         plan = json.loads(result.stdout)
-        self.assertEqual(plan['root'], str(target))
+        self.assertEqual(Path(plan['root']).resolve(), target.resolve())
         self.assertEqual(plan['globalEnvironmentChanges'], [])
         self.assertFalse(target.exists())
 
