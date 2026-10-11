@@ -1,0 +1,1 @@
+namespace StaticFixture; public static class KnownAlgorithm { public static int Transform(int value) => value * 7 + 11; public static int Caller(int value) => Transform(value) + 3; public static string Marker() => "RE_MANAGED_FIXTURE_2026"; }

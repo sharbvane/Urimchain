@@ -1,0 +1,38 @@
+name: Windows engines (manual)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  engines:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Install official engines and run Doctor
+        shell: pwsh
+        run: |
+          ./scripts/install.ps1 -Root "$env:RUNNER_TEMP/urimchain"
+          ./scripts/doctor.ps1 -Root "$env:RUNNER_TEMP/urimchain"
+      - name: Compile harmless managed fixture (do not execute it)
+        shell: pwsh
+        run: |
+          dotnet new classlib -n Fixture -o "$env:RUNNER_TEMP/fixture"
+          Set-Content "$env:RUNNER_TEMP/fixture/Class1.cs" 'public static class KnownAlgorithm { public static int Mix(int x) => (x * 7) ^ 0x35; }'
+          dotnet build "$env:RUNNER_TEMP/fixture" -c Release -o "$env:RUNNER_TEMP/fixture-output"
+          python "$env:RUNNER_TEMP/urimchain/scripts/re-tool.py" analyze "$env:RUNNER_TEMP/fixture-output/Fixture.dll" --output "$env:RUNNER_TEMP/managed-analysis"
+          if (-not (Get-ChildItem "$env:RUNNER_TEMP/managed-analysis/ilspy" -Recurse -Filter *.cs | Select-String 'KnownAlgorithm')) { throw 'Expected decompiled fixture was not found' }
+      - name: Uninstall only owned installation files
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path "$env:RUNNER_TEMP/urimchain/urimchain-install.json") { ./scripts/uninstall.ps1 -Root "$env:RUNNER_TEMP/urimchain" }

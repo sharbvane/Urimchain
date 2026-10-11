@@ -1,0 +1,22 @@
+name: Fast checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  unit:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Syntax and generated-header routing tests
+        run: |
+          python -m compileall -q scripts tests
+          python -m unittest discover -s tests -v
+      - name: Installation plan (no download or configuration change)
+        shell: pwsh
+        run: ./scripts/install.ps1 -Root "$env:RUNNER_TEMP/urimchain-plan" -Plan

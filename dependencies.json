@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "tools": [
+    {
+      "version": "21.0.12.1+1",
+      "license_url": "https://github.com/openjdk/jdk21u/blob/master/LICENSE",
+      "folder": "jdk-21.0.12.1+1",
+      "license": "GPL-2.0-only WITH Classpath-exception-2.0",
+      "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_windows_hotspot_21.0.12.1_1.zip",
+      "archive": "zip",
+      "upstream": "https://adoptium.net",
+      "sha256": "f9d6e191ab098c0d416e7d588a24420a8621cd2f4720dab2459b8b7b2d2d8b4e",
+      "id": "jdk",
+      "executable": "bin/java.exe"
+    },
+    {
+      "version": "12.1.4",
+      "license_url": "https://github.com/NationalSecurityAgency/ghidra/blob/Ghidra_12.1.4_build/LICENSE",
+      "folder": "ghidra_12.1.4_PUBLIC",
+      "license": "Apache-2.0",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_12.1.4_build/ghidra_12.1.4_PUBLIC_20260921.zip",
+      "archive": "zip",
+      "upstream": "https://github.com/NationalSecurityAgency/ghidra",
+      "sha256": "ddac49f903da9d5bac833e5cc79395098b9c33cfd3279be5f31bd00387d2d4db",
+      "id": "ghidra",
+      "executable": "support/analyzeHeadless.bat"
+    },
+    {
+      "version": "1.5.6",
+      "license_url": "https://github.com/skylot/jadx/blob/v1.5.6/LICENSE",
+      "folder": "",
+      "license": "Apache-2.0",
+      "url": "https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip",
+      "archive": "zip",
+      "upstream": "https://github.com/skylot/jadx",
+      "sha256": "545ea2be9c242511bc145755cf4bda2485ade42966e096f8b4d3da2a230e8974",
+      "id": "jadx",
+      "executable": "bin/jadx.bat"
+    },
+    {
+      "version": "3.0.3",
+      "license_url": "https://github.com/iBotPeaches/Apktool/blob/v3.0.3/LICENSE.md",
+      "folder": "apktool-3.0.3",
+      "license": "Apache-2.0",
+      "url": "https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar",
+      "archive": "jar",
+      "upstream": "https://github.com/iBotPeaches/Apktool",
+      "sha256": "dbf930b076c6b9be08d57c449cacefc3bdd6b71ebd59b3066fc0e1f5b14f9423",
+      "id": "apktool",
+      "executable": "apktool.jar"
+    },
+    {
+      "version": "0.7.1",
+      "license_url": "https://github.com/1013503897/jadx-headless-mcp/blob/v0.7.1/LICENSE",
+      "folder": "jadx-headless-mcp-0.7.1",
+      "license": "Apache-2.0",
+      "url": "https://github.com/1013503897/jadx-headless-mcp/releases/download/v0.7.1/jadx-headless-mcp-0.7.1-all.jar",
+      "archive": "jar",
+      "upstream": "https://github.com/1013503897/jadx-headless-mcp",
+      "sha256": "6e5eacf500b64292bfb73c49797c1958f6ee44646e43e868039ae7feb573ff75",
+      "id": "bridge",
+      "executable": "jadx-headless-mcp-0.7.1-all.jar"
+    },
+    {
+      "version": "6.4.0",
+      "license_url": "https://github.com/morluto/rea/blob/rea-agents-6.4.0/LICENSE",
+      "license": "MIT",
+      "url": "https://registry.npmjs.org/rea-agents/-/rea-agents-6.4.0.tgz",
+      "archive": "npm",
+      "upstream": "https://github.com/morluto/rea",
+      "sha256": null,
+      "package": "rea-agents",
+      "id": "rea",
+      "integrity": "sha512-Vj1zWfSlna5bphGoaoI/TcVBuYvze9u+OyPC3Shz8YkBqaCTqB4COnnRoX7XDwMpwI24ZlFEel2yEj0k8LTWEQ=="
+    },
+    {
+      "version": "9.1.0.7988",
+      "license_url": "https://github.com/icsharpcode/ILSpy/blob/v9.1/LICENSE",
+      "license": "MIT",
+      "url": "https://api.nuget.org/v3-flatcontainer/ilspycmd/9.1.0.7988/ilspycmd.9.1.0.7988.nupkg",
+      "archive": "dotnet",
+      "upstream": "https://github.com/icsharpcode/ILSpy",
+      "sha256": "2b5058f5ccc164c33b7aabf1a5eb0cf3d3a6af6c145aaf58efd3ed891443af7c",
+      "package": "ilspycmd",
+      "id": "ilspy"
+    }
+  ]
+}

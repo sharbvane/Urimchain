@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+toolchain.json
+downloads/
+temp/
+outputs/
+backups/
+*.zip
+*.nupkg
