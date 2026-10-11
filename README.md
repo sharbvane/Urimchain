@@ -2,6 +2,8 @@
 
 **A reproducible Windows static reverse-engineering toolchain for AI agents.**
 
+[![Checks](https://github.com/sharbvane/Urimchain/actions/workflows/ci.yml/badge.svg)](https://github.com/sharbvane/Urimchain/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 [简体中文](README.zh-CN.md) · [Architecture](docs/architecture.md) · [Limitations](docs/limitations.md) · [Third-party notices](THIRD_PARTY_NOTICES.md)
 
 Urimchain packages a tested combination of REA, Ghidra, JADX, Apktool and ILSpy behind a small file-type router and an independent [Agent Skill](https://agentskills.io/specification). It installs official upstream releases into a directory you choose, keeps analysis outputs separate from inputs, and gives an agent a consistent way to select and combine existing engines.

@@ -32,6 +32,8 @@ All 22 unit/lifecycle tests passed. They exercise Plan without mutation, refusal
 
 ## Coverage boundaries
 
+Actual GitHub Windows Runner results passed: [Fast checks, 22 tests and install Plan](https://github.com/sharbvane/Urimchain/actions/runs/38154507894) and [Windows engines: official install, Doctor, .NET decompilation and uninstall](https://github.com/sharbvane/Urimchain/actions/runs/38154384410). The first fast run exposed short-path aliases in temporary test fixtures; resolving those paths fixed the test harness, and the rerun passed.
+
 The ordinary GitHub workflow runs parser, Skill, source-boundary and isolated lifecycle checks. The separate manual Windows workflow covers installation, Doctor and a self-built managed route. Local Ghidra and Android results above are separate from CI coverage. A workflow definition does not count as a passed run.
 
 REA's scoped Ghidra Doctor passed. Its wider audit can report unavailable optional engines or other client registrations; those do not establish failure of the exercised routes. This release does not test arbitrary obfuscated/protected targets, a clean physical Windows machine without prerequisites, runtime debugging, or Unity metadata reconstruction. Small upstream user-profile caches may remain outside the selected installation directory.

@@ -1,5 +1,7 @@
 # Urimchain
 
+[![Checks](https://github.com/sharbvane/Urimchain/actions/workflows/ci.yml/badge.svg)](https://github.com/sharbvane/Urimchain/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **面向 AI Agent、可复现安装的 Windows 静态逆向工程工具链。**
 
 [English](README.md) · [架构](docs/architecture.md) · [兼容边界](docs/limitations.md) · [第三方许可](THIRD_PARTY_NOTICES.md)
